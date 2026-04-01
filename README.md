@@ -2,22 +2,20 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# How to prepare the list
-
 # Run and deploy your AI Studio app
 
 This contains everything you need to run your app locally.
 
 The alpha-version in AI Studio: https://ai.studio/apps/7a1e29d6-ecc5-47c7-a3fd-1345278bf98f
 
-**Prerequisites:**
-Node.js
-python3 and the following modules
-  pandas
-  bio
-  ete3
-  legacy-cgi
-  schedule
+# Prerequisites
+- Node.js
+- python3.13 and the following modules
+  - pandas
+  - bio
+  - ete3
+  - legacy-cgi
+  - schedule
 
 ## Installation
 1. `git clone https://github.com/tkosuge/WGS_browser.git`
