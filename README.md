@@ -14,8 +14,9 @@ The alpha-version in AI Studio: https://ai.studio/apps/7a1e29d6-ecc5-47c7-a3fd-1
   - pandas
   - bio
   - ete3
-  - legacy-cgi
   - schedule
+  - legacy-cgi (for >python3.13)
+
 
 ## Installation
 1. `git clone https://github.com/tkosuge/WGS_browser.git`
