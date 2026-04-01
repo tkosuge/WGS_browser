@@ -1,0 +1,5 @@
+{
+  "name": "WGS Browser",
+  "description": "A high-performance browser for the WGS organism list, featuring server-side pagination, filtering, and sorting for millions of records. Build by Google AI Studio.",
+  "requestFramePermissions": []
+}
