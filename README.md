@@ -10,7 +10,7 @@ The alpha-version in AI Studio: https://ai.studio/apps/7a1e29d6-ecc5-47c7-a3fd-1
 
 # Prerequisites
 - Node.js
-- python3 and the following modules
+- python3.12 or above and the following modules
   - pandas
   - bio
   - ete3
