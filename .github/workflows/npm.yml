@@ -38,4 +38,4 @@ jobs:
 
       # 開始実行
       - name: Run script
-        run: npm run build
+        run: npm run dev
