@@ -1,15 +1,12 @@
 # Overview
 This web application fetches the file WGS_ORGANISM_LIST.txt from the DDBJ and displays it in a list format. It provides pagination, search, filtering, and sorting features for easy browsing.
 
+# AI Studio app
+
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# AI Studio app
-
-This contains everything you need to run your app locally.
-
-The alpha-version in AI Studio: https://ai.studio/apps/7a1e29d6-ecc5-47c7-a3fd-1345278bf98f
 
 # Prerequisites
 - Node.js
