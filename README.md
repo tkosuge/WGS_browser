@@ -26,7 +26,7 @@ The alpha-version in AI Studio: https://ai.studio/apps/7a1e29d6-ecc5-47c7-a3fd-1
    The script keeps running and does not return to the prompt until pressing ctrl+c. The script periodically (every ~3 hours each day) updates the folloing text and sqlite files. WGS_ORGANISM_LIST.txt, taxdump.tar.gz, WGS_ORGANISM_LIST_with_Taxonomy.tsv, ncbitaxonomy.sqlite, and ncbitaxonomy.sqlite.traverse.pkl are created.
 
 ## Start the app
-For dev mode: 
+For dev mode:  
    `npm run dev`
 
 For production mode:  
