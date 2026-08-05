@@ -21,8 +21,9 @@ This web application fetches the file WGS_ORGANISM_LIST.txt from the DDBJ and di
 ## Installation
 1. `git clone https://github.com/tkosuge/WGS_browser.git`
 2. `cd WGS_browser`
-3. `npm install`
-4. `python3 getlist.py`
+3. Change the values, const PORT = 23000 and setInterval(checkUpdate, 60 * 60 * 1000), according to your environment.
+4. `npm install`
+5. `python3 getlist.py`
    The script keeps running and does not return to the prompt until pressing ctrl+c. The script periodically (every ~3 hours each day) updates the folloing text and sqlite files. WGS_ORGANISM_LIST.txt, taxdump.tar.gz, WGS_ORGANISM_LIST_with_Taxonomy.tsv, ncbitaxonomy.sqlite, and ncbitaxonomy.sqlite.traverse.pkl are created.
 
 ## Start the app
