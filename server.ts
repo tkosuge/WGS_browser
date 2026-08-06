@@ -142,7 +142,7 @@ async function checkUpdate() {
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = 23000;
 
   // Initial check
   checkUpdate();
