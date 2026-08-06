@@ -45,7 +45,7 @@ def add_taxonomy_to_wgs_list(input_file, output_file):
     name_to_taxid = ncbi.get_name_translator(unique_names)
     
     # 取得したい階級（Rank）の定義
-    target_ranks = ['domain', 'phylum', 'class', 'order', 'family', 'genus']
+    target_ranks = ['domain', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus']
     
     # 結果格納用の辞書
     tax_info_map = {}
