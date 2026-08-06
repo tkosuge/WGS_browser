@@ -3,13 +3,9 @@ import { createServer as createViteServer } from "vite";
 import Database from "better-sqlite3";
 import path from "path";
 import fs from "fs";
-import { fileURLToPath } from "url";
 import readline from "readline";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const DB_PATH = path.join(__dirname, "wgs_data.db");
+const DB_PATH = path.join(process.cwd(), "wgs_data.db");
 const db = new Database(DB_PATH);
 
 // Initialize Database
@@ -52,7 +48,7 @@ db.exec(`
 
 async function updateData() {
   console.log("Starting data update from local file...");
-  const filePath = path.join(__dirname, "WGS_ORGANISM_LIST_with_Taxonomy.tsv");
+  const filePath = path.join(process.cwd(), "WGS_ORGANISM_LIST_with_Taxonomy.tsv");
   
   if (!fs.existsSync(filePath)) {
     console.warn(`Local file not found at ${filePath}. Skipping update.`);
@@ -131,7 +127,7 @@ async function updateData() {
 
 // Check if update is needed (based on file modification time)
 async function checkUpdate() {
-  const filePath = path.join(__dirname, "WGS_ORGANISM_LIST_with_Taxonomy.tsv");
+  const filePath = path.join(process.cwd(), "WGS_ORGANISM_LIST_with_Taxonomy.tsv");
   if (!fs.existsSync(filePath)) return;
 
   const stats = fs.statSync(filePath);
@@ -292,9 +288,10 @@ async function startServer() {
     });
     app.use("", vite.middlewares);
   } else {
-    app.use("", express.static(path.join(__dirname, "dist")));
+    const distPath = path.join(process.cwd(), "dist");
+    app.use(express.static(distPath));
     app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname, "dist", "index.html"));
+      res.sendFile(path.join(distPath, "index.html"));
     });
   }
 
