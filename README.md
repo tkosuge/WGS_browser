@@ -34,4 +34,4 @@ For production mode:
    `npm run build`  
    `npm start`
 
-Open http://localhost:23000/wgs in the browser.
+Open http://localhost:23000/ in the browser.
