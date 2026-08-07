@@ -185,7 +185,7 @@ async function startServer() {
     return { whereClause, params, taxFilters };
   };
 
-  app.get("/api/organisms", (req, res) => {
+  app.get("/wgs/api/organisms", (req, res) => {
     const page = parseInt(req.query.page as string) || 1;
     const limit = parseInt(req.query.limit as string) || 20;
     const offset = (page - 1) * limit;
@@ -251,14 +251,14 @@ async function startServer() {
     });
   });
 
-  app.get("/api/organisms/files", (req, res) => {
+  app.get("/wgs/api/organisms/files", (req, res) => {
     const { whereClause, params } = getWhereClause(req.query);
     const query = `SELECT file_name FROM organisms ${whereClause}`;
     const rows = db.prepare(query).all(...params) as { file_name: string }[];
     res.json(rows.map(r => r.file_name));
   });
 
-  app.get("/api/proxy/metadata", async (req, res) => {
+  app.get("/wgs/api/proxy/metadata", async (req, res) => {
     const { type, id } = req.query;
     if (!type || !id) return res.status(400).json({ error: "Missing type or id" });
 

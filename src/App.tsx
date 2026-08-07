@@ -122,7 +122,7 @@ export default function App() {
       setMetadataContent(null);
 
       try {
-        const response = await fetch(`/api/proxy/metadata?type=${type}&id=${id}`);
+        const response = await fetch(`/wgs/api/proxy/metadata?type=${type}&id=${id}`);
         if (!response.ok) throw new Error("Failed to fetch metadata");
         const data = await response.json();
         setMetadataContent(data);
@@ -159,7 +159,7 @@ export default function App() {
         if (value) queryParams.append(`filter_${key}`, value as string);
       });
 
-      const response = await fetch(`/api/organisms/files?${queryParams.toString()}`);
+      const response = await fetch(`/wgs/api/organisms/files?${queryParams.toString()}`);
       const files = await response.json();
 
       if (files.length > MAX_DOWNLOAD_QUEUE) {
@@ -218,7 +218,7 @@ export default function App() {
       });
 
       const params = new URLSearchParams(queryParams);
-      const response = await fetch(`/api/organisms?${params}`);
+      const response = await fetch(`/wgs/api/organisms?${params}`);
       if (!response.ok) throw new Error("Failed to fetch data");
       const result = await response.json();
       setData(result.data);
