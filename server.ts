@@ -289,8 +289,8 @@ async function startServer() {
     app.use("", vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
-    app.get("*", (req, res) => {
+    app.use("/wgs", express.static(distPath));
+    app.get("/wgs/*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
   }
