@@ -5,6 +5,7 @@ from ete3 import NCBITaxa
 import os
 import urllib.request
 from email.utils import parsedate_to_datetime
+from datetime import datetime
 import schedule
 import time
 
@@ -77,6 +78,19 @@ def add_taxonomy_to_wgs_list(input_file, output_file):
     # 5. 結果を保存
     df.to_csv(f"./{output_file}", sep='\t', index=False)
     print(f"Success! Saved to {output_file}")
+
+    # timestampを元のファイルのLast-Modifiedに合わせる
+    if last_modified:
+        dt = parsedate_to_datetime(last_modified)
+        timestamp = dt.timestamp()
+        os.utime(output_file, (timestamp, timestamp))
+        print(f"Downloaded and timestamp set: {output_file}")
+    else:
+        print(f"Downloaded (no Last-Modified header): {output_file}")
+    # 
+    now = datetime.now()
+    with open("./jikkou.log", "w", encoding="utf-8") as f:
+        f.write(now.strftime("%Y-%m-%d %H:%M:%S"))
 
 # 実行
 if __name__ == '__main__':
